@@ -12,15 +12,18 @@
     "start": "node server.js",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet"
   },
   "keywords": [],
   "author": "Brian Holt",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
     "@vitejs/plugin-react": "4.0.3",
     "eslint": "8.45.0",
     "eslint-config-prettier": "8.9.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-react": "7.33.0",
