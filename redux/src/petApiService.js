@@ -8,7 +8,18 @@ export const petApi = createApi({
       query: (id) => ({ url: "pets", params: { id } }),
       transformResponse: (response) => response.pets[0],
     }),
+    getBreeds: builder.query({
+      query: (animal) => ({ url: "breeds", params: { animal } }),
+      transformResponse: (response) => response.pets[0],
+    }),
+    search: builder.query({
+      query: ({ animal, location, breed }) => ({
+        url: "pets",
+        params: { animal, location, breed },
+      }),
+      transformResponse: (response) => response.pets,
+    }),
   }),
 });
 
-export const { useGetPetQuery } = petApi;
+export const { useGetBreedsQuery, useGetPetQuery, useSearchQuery } = petApi;
