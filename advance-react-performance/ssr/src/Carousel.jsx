@@ -6,11 +6,11 @@ class Carousel extends Component {
   };
 
   static defaultProps = {
-    images: ["https://pets-images.dev-apis.com/pets/none.jpg"],
+    images: ["http://pets-images.dev-apis.com/pets/none.jpg"],
   };
 
-  handleClickEvent = (event) => {
-    return this.setState({
+  handleIndexClick = (event) => {
+    this.setState({
       active: +event.target.dataset.index,
     });
   };
@@ -22,15 +22,14 @@ class Carousel extends Component {
       <div className="carousel">
         <img src={images[active]} alt="animal" />
         <div className="carousel-smaller">
-          {/* eslint-disable-next-line */}
           {images.map((photo, index) => (
             // eslint-disable-next-line
             <img
-              src={photo}
-              alt="animal thumbnail"
               key={photo}
+              src={photo}
               className={index === active ? "active" : ""}
-              onClick={this.handleClickEvent}
+              alt="animal thumbnail"
+              onClick={this.handleIndexClick}
               data-index={index}
             />
           ))}
