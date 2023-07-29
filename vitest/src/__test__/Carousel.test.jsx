@@ -16,6 +16,6 @@ test("lets user click on thumbnail to make them the hero", async () => {
     await thumb.click();
 
     expect(hero.src).toContain(image);
-    expect(Array.from(thumb.clasList)).toContain("active");
+    expect(Array.from(thumb.classList)).toContain("active");
   }
 });
